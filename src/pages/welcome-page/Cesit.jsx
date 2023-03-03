@@ -21,11 +21,11 @@ const Cesit = () => {
     setSepet(remainder);
   };
   return (
-    <div className="container">
+    <div className="container m-5">
       <h1>Çeşitler</h1>
       <p>Tanesı 3$</p>
       <h2 data-testid="ucret">Çeşitler Ücreti: {sepet.length * 3} $</h2>
-      <div className="row gap-4 m-5">
+      <div className="row gap-4">
         {cesitler.map((cesit) => {
           const adet = adetBul(cesit);
           return (
