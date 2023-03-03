@@ -43,7 +43,7 @@ const Cesit = () => {
                 >
                   Sıfırla
                 </button>
-                <span className="lead">{adet}</span>
+                <span className="lead" data-testid="adet">{adet}</span>
                 <button
                   className="btn btn-primary"
                   onClick={() => setSepet([...sepet, cesit])}

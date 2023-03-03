@@ -36,13 +36,30 @@ test("Sepete çeşit ekleme işlemi", async () => {
   expect(sepet2).toHaveTextContent("6");
 });
 
-test("Sepetteki ürününü sıfırlama işlemi", async () => {
+test("Sepetteki urunu sifirlama islemi", async () => {
   render(<Cesit />);
   const user = userEvent.setup();
 
-  //sifirlama butonlarini secme
-  const btns = await screen.findAllByRole("button", { name: "Ekle" });
+  //select reset and add buttons
+  const addBtn = await screen.findAllByRole("button", { name: "Ekle" });
+  const delBtn = await screen.findAllByRole("button", { name: /sıfırla/i });
+  const sepet = screen.getByText(/Çeşitler Ücreti:/i);
 
-  //ekleme islemi
-  await user.click(btns[0]);
+  //add action
+  await user.click(addBtn[0]); //1.buton uzerinden test yapiyoruz
+  await user.dblClick(addBtn[1]); //2.buton uzerinden test yapiyoruz
+
+  expect(sepet).toHaveTextContent("9");
+
+  //delete action
+  await user.click(delBtn[0]);
+  //remainder price text content?
+  expect(sepet).toHaveTextContent("6");
+
+  await user.dblClick(addBtn[0]);
+  expect(sepet).toHaveTextContent("12");
+
+  //reset action
+  await user.click(delBtn[0]);
+  expect(sepet).toHaveTextContent("6");
 });
