@@ -6,7 +6,7 @@
  - axios, json-server 
  
  ## Deploy
- (https://unit-react-testing.netlify.app/)
+ https://unit-react-testing.netlify.app/
   
  
 ### `Screen` </br>
