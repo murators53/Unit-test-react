@@ -5,7 +5,7 @@
  - `react testing library and jest tested in type and sauces control `
  - axios, json-server 
  
- ### Deploy
+ ### `Deploy`
  https://unit-react-testing.netlify.app/
   
  
